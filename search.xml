@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Test</title>
+      <link href="/2022/09/20/test/"/>
+      <url>/2022/09/20/test/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h1><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;int main(){    cout &lt;&lt; "Hello World" &lt;&lt; endl;}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>测试！！！！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 代码随想录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2022/09/20/hello-world/"/>
+      <url>/2022/09/20/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 代码随想录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>卷积神经网络</title>
+      <link href="/2022/09/12/juan-ji-shen-jing-wang-luo/"/>
+      <url>/2022/09/12/juan-ji-shen-jing-wang-luo/</url>
+      
+        <content type="html"><![CDATA[<h1 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h1><blockquote><p>卷积神经网络是一种在以图像识别为中心的多个领域都得到广泛应用的深度学习方法。</p></blockquote><h2 id="一、卷积神经网络的结构"><a href="#一、卷积神经网络的结构" class="headerlink" title="一、卷积神经网络的结构"></a>一、卷积神经网络的结构</h2><p>卷积神经网络（Convolutional Neural Network, CNN）由<code>输入层（input layer）</code>、<code>卷积层（convolution layer）</code>、<code>池化层（pooling layer）</code>、<code>全连接层（fully connected layer）</code>和<code>输出层（output layer）</code>组成。通过增加卷积层和池化层，还可以得到更深层次的网络，其后的全连接层也可以采用多层结构。其结构如图1.1所示：</p><p>![图1-1 卷积神经网络的结构](.\images\图1.1 卷积神经网络的结构.png)</p><p>​图1.1 卷积神经网络的结构</p><h2 id="二、卷积层"><a href="#二、卷积层" class="headerlink" title="二、卷积层"></a>二、卷积层</h2><p>卷积神经网络中的卷积操纵可以看作是输入样本和卷积核的内积运算。在第一层卷积层对输入样本进行卷积操作后，就可以得到特征图。卷积层中是使用同一卷积核对每个输入样本进行卷积操作的。在第二层及其以后的卷积层中，把前一层的特征图作为输入数据，同样进行卷积操作。如图1.2所示，对 10×10 的输入样本使用 3×3 的卷积核进行卷积操作后，可以得到一个 8×8 的特征图。特征图的尺寸会小于输入样本，为了得到和原始输入样本大小相同的特征图，可以采用对输入样本进行填充（padding）处理后再进行卷积操作的方法。</p><p>![图1.2 卷积处理](.\images\图1.2 卷积处理.png)</p><p>​图1.2 卷积处理</p><p>当卷积层的输入样本是三通道的彩色图像时，卷积核也应该与输入的样本维度保持一致（3维），即<code>3 × M × M，M表示卷积核的大小</code>。第二层及其以后的卷积层的输入是上一层的特征图，而特征图的个数是由上一层的卷积核数决定的。具有多个卷积核的卷积层如图1.3所示：</p><p>![图1.3 具有多个卷积核的卷积层](.\images\图1.3 具有多个卷积核的卷积层.png)</p><p>​图1.3 具有多个卷积核的卷积层</p><h2 id="三、池化层"><a href="#三、池化层" class="headerlink" title="三、池化层"></a>三、池化层</h2><p>池化层的作用是减少卷积层产生的特征图的尺寸。选取一个区域，根据该区域的特征图得到新的特征图，这个过程就称为池化操作。对一个 2×2 的区域进行池化操作后，得到的新特征图会被压缩为原来尺寸的1/4。池化操作降低特征图的维度，使得特征表示对输入数据的位置变化具有稳健性。主要的池化方法有<code>最大池化</code>、<code>平均池化</code>、<code>Lp池化</code>，如图1.4所示：</p><p>![图1.4 池化方法的种类](.\images\图1.4 池化方法的种类.png)</p><p>​图1.4 池化方法的种类</p><blockquote><p>最大池化是选取图像区域内的最大值作为新的特征图。<code>（最常用）</code></p><p>平均池化是选取图像区域内的平均值作为新的特征图。</p><p>Lp池化是通过突出图像区域内的中央值而计算新的特征图。</p></blockquote><p>$$<br>Lp池化的计算公式：f(x_i) = (\sum_{j=1}^n\sum_{i=1}^nI(i, j)^p * G(i, j))^\frac{1}{p}，其中p越大越能突出中心位置的值。<br>$$</p><ul><li>pooling的作用</li></ul><blockquote><ol><li>降维，在保证原有特征的基础上，尽量减少参数；</li><li>使网络对一些小的局部形态改变保证不变性，并拥有更大的感受野；</li><li>池化层也可以看成一种特殊的卷积，卷积核为max或mean函数；</li></ol></blockquote><h2 id="四、全连接层"><a href="#四、全连接层" class="headerlink" title="四、全连接层"></a>四、全连接层</h2><p>和多层感知器一样，全连接层也是首先计算激活值，然后通过激活函数计算各单元的输出值。激活函数包含<code>sigmoid</code>、<code>tanh</code>、<code>ReLU</code>等函数。由于全连接层的输入就是卷积层或池化层的输出，是二维的特征图，所以需要对二维特征图进行降维（展平）处理，如图1.5所示：</p><p>![图1.5 全连接层的输入](.\images\图1.5 全连接层的输入.png)</p><p>​图1.5 全连接层的输入</p><h2 id="五、输出层"><a href="#五、输出层" class="headerlink" title="五、输出层"></a>五、输出层</h2><p>和多层感知器的输出层一样，卷积神经网络的输出层也是使用似然函数计算各类别的似然概率。<code>多分类问题</code>中通常使用<code>softmax</code>函数作为似然函数。<br>$$<br>P(y|x) = \frac{e^{h(x, y_i)}}{\sum_{j=1}^ne^{h(x, y_i)}}<br>$$</p><blockquote><p><code>softmax</code>函数的分母是对输出层所有单元（j = 1, ···, n）的激活值进行求和，起到了归一化的作用，输出层中每个单元取值都是介于0和1之间的概率值，选择其中概率值最大的类别作为最终分类结果输出。</p></blockquote><h2 id="六、神经网络的训练方法"><a href="#六、神经网络的训练方法" class="headerlink" title="六、神经网络的训练方法"></a>六、神经网络的训练方法</h2><p>卷积神经网络的参数包括卷积层的卷积核大小、全连接层的连接权重和偏置值。和多层神经网络一样，卷积神经网络中的参数训练也是使用误差反向传播算法。</p><h2 id="未完待续…-…"><a href="#未完待续…-…" class="headerlink" title="未完待续… …"></a>未完待续… …</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 深度学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 神经网络 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
