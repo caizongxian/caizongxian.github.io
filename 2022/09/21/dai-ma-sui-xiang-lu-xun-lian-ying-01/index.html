@@ -4,11 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="卷积神经网络, 小菜同学&#39;S BLOG">
-    <meta name="description" content="卷积神经网络
-卷积神经网络是一种在以图像识别为中心的多个领域都得到广泛应用的深度学习方法。
+    <meta name="keywords" content="代码随想录训练营01, 小菜同学&#39;S BLOG">
+    <meta name="description" content="代码随想录训练营Day01Leetcode刷题704. 二分查找
+题目中描述数组有序且无重复元素，二者为使用二分查找的前提！
 
-一、卷积神经网络的结构卷积神经网络（Convolutional Neural Network, CNN）由输入层（input layer）、卷积层">
+二分查找要注意边界条件的判断！搞清楚区间的定义，二分查找边界的判断是根据区间的定义来操作的，二分法中区间的定义一">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>卷积神经网络 | 小菜同学&#39;S BLOG</title>
+    <title>代码随想录训练营01 | 小菜同学&#39;S BLOG</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -230,12 +230,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">卷积神经网络</h1>
+                    <h1 class="description center-align post-title">代码随想录训练营01</h1>
                 </div>
             </div>
         </div>
@@ -259,8 +259,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
-                                <span class="chip bg-color">神经网络</span>
+                            <a href="/tags/leetcode/">
+                                <span class="chip bg-color">leetcode</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
                             </a>
                         
                     </div>
@@ -271,8 +275,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                深度学习
+                            <a href="/categories/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/" class="post-category">
+                                代码随想录
                             </a>
                         
                     </div>
@@ -284,7 +288,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-09-12
+                    2022-09-21
                 </div>
                 
 
@@ -293,7 +297,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    860
                 </div>
                 
 
@@ -313,46 +317,135 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h1><blockquote>
-<p>卷积神经网络是一种在以图像识别为中心的多个领域都得到广泛应用的深度学习方法。</p>
+                <h1 id="代码随想录训练营Day01"><a href="#代码随想录训练营Day01" class="headerlink" title="代码随想录训练营Day01"></a>代码随想录训练营Day01</h1><h2 id="Leetcode刷题"><a href="#Leetcode刷题" class="headerlink" title="Leetcode刷题"></a>Leetcode刷题</h2><h3 id="704-二分查找"><a href="#704-二分查找" class="headerlink" title="704. 二分查找"></a>704. 二分查找</h3><blockquote>
+<p>题目中描述数组有序且无重复元素，二者为使用二分查找的前提！</p>
 </blockquote>
-<h2 id="一、卷积神经网络的结构"><a href="#一、卷积神经网络的结构" class="headerlink" title="一、卷积神经网络的结构"></a>一、卷积神经网络的结构</h2><p>卷积神经网络（Convolutional Neural Network, CNN）由<code>输入层（input layer）</code>、<code>卷积层（convolution layer）</code>、<code>池化层（pooling layer）</code>、<code>全连接层（fully connected layer）</code>和<code>输出层（output layer）</code>组成。通过增加卷积层和池化层，还可以得到更深层次的网络，其后的全连接层也可以采用多层结构。其结构如图1.1所示：</p>
-<p><img src="https://blog-1257468024.cos.ap-beijing.myqcloud.com/blog_images/convolutional_neural_network/%2022092001.webp" alt="图1-1 卷积神经网络的结构"></p>
-<p>​																								图1.1 卷积神经网络的结构</p>
-<h2 id="二、卷积层"><a href="#二、卷积层" class="headerlink" title="二、卷积层"></a>二、卷积层</h2><p>卷积神经网络中的卷积操纵可以看作是输入样本和卷积核的内积运算。在第一层卷积层对输入样本进行卷积操作后，就可以得到特征图。卷积层中是使用同一卷积核对每个输入样本进行卷积操作的。在第二层及其以后的卷积层中，把前一层的特征图作为输入数据，同样进行卷积操作。如图1.2所示，对 10×10 的输入样本使用 3×3 的卷积核进行卷积操作后，可以得到一个 8×8 的特征图。特征图的尺寸会小于输入样本，为了得到和原始输入样本大小相同的特征图，可以采用对输入样本进行填充（padding）处理后再进行卷积操作的方法。</p>
-<p><img src="https://blog-1257468024.cos.ap-beijing.myqcloud.com/blog_images/convolutional_neural_network/%2022092002.webp" alt="图1.2 卷积处理"></p>
-<p>​																										图1.2 卷积处理</p>
-<p>当卷积层的输入样本是三通道的彩色图像时，卷积核也应该与输入的样本维度保持一致（3维），即<code>3 × M × M，M表示卷积核的大小</code>。第二层及其以后的卷积层的输入是上一层的特征图，而特征图的个数是由上一层的卷积核数决定的。具有多个卷积核的卷积层如图1.3所示：</p>
-<p><img src="https://blog-1257468024.cos.ap-beijing.myqcloud.com/blog_images/convolutional_neural_network/%2022092003.webp" alt="图1.3 具有多个卷积核的卷积层"></p>
-<p>​																					图1.3 具有多个卷积核的卷积层</p>
-<h2 id="三、池化层"><a href="#三、池化层" class="headerlink" title="三、池化层"></a>三、池化层</h2><p>池化层的作用是减少卷积层产生的特征图的尺寸。选取一个区域，根据该区域的特征图得到新的特征图，这个过程就称为池化操作。对一个 2×2 的区域进行池化操作后，得到的新特征图会被压缩为原来尺寸的1/4。池化操作降低特征图的维度，使得特征表示对输入数据的位置变化具有稳健性。主要的池化方法有<code>最大池化</code>、<code>平均池化</code>、<code>Lp池化</code>，如图1.4所示：</p>
-<p><img src="https://blog-1257468024.cos.ap-beijing.myqcloud.com/blog_images/convolutional_neural_network/%202022092004.webp" alt="图1.4 池化方法的种类"></p>
-<p>​																							图1.4 池化方法的种类</p>
-<blockquote>
-<p>最大池化是选取图像区域内的最大值作为新的特征图。<code>（最常用）</code></p>
-<p>平均池化是选取图像区域内的平均值作为新的特征图。</p>
-<p>Lp池化是通过突出图像区域内的中央值而计算新的特征图。</p>
-</blockquote>
-<p>$$<br>Lp池化的计算公式：f(x_i) = (\sum_{j=1}^n\sum_{i=1}^nI(i, j)^p * G(i, j))^\frac{1}{p}，其中p越大越能突出中心位置的值。<br>$$</p>
-<ul>
-<li>pooling的作用</li>
-</ul>
+<p><code>二分查找要注意边界条件的判断！搞清楚区间的定义，二分查找边界的判断是根据区间的定义来操作的，二分法中区间的定义一般有两种，一种是左闭右闭[left, right]，一种是左闭右开[left, right)。</code></p>
+<p>思路一：定义target在一个左闭右开的区间<code>[left, right)</code></p>
 <blockquote>
 <ol>
-<li>降维，在保证原有特征的基础上，尽量减少参数；</li>
-<li>使网络对一些小的局部形态改变保证不变性，并拥有更大的感受野；</li>
-<li>池化层也可以看成一种特殊的卷积，卷积核为max或mean函数；</li>
+<li><code>left == right</code>在区间<code>[left, right)</code>内无意义，故循环条件为 <code>&lt;</code>；</li>
+<li><code>若nums[middle] &lt; target，则更新左区间，由于定义的区间为左闭右开，所以left = middle + 1</code>;</li>
+<li><code>若nums[middle] &gt; target，则更新右区间，由于定义的区间为左闭右开，所以right = middle</code>;</li>
+<li><code>若在整个区间中未找到target，则返回-1</code>;</li>
 </ol>
 </blockquote>
-<h2 id="四、全连接层"><a href="#四、全连接层" class="headerlink" title="四、全连接层"></a>四、全连接层</h2><p>和多层感知器一样，全连接层也是首先计算激活值，然后通过激活函数计算各单元的输出值。激活函数包含<code>sigmoid</code>、<code>tanh</code>、<code>ReLU</code>等函数。由于全连接层的输入就是卷积层或池化层的输出，是二维的特征图，所以需要对二维特征图进行降维（展平）处理，如图1.5所示：</p>
-<p><img src="https://blog-1257468024.cos.ap-beijing.myqcloud.com/blog_images/convolutional_neural_network/%202022092005.webp" alt="图1.5 全连接层的输入"></p>
-<p>​																								图1.5 全连接层的输入</p>
-<h2 id="五、输出层"><a href="#五、输出层" class="headerlink" title="五、输出层"></a>五、输出层</h2><p>和多层感知器的输出层一样，卷积神经网络的输出层也是使用似然函数计算各类别的似然概率。<code>多分类问题</code>中通常使用<code>softmax</code>函数作为似然函数。<br>$$<br>P(y|x) = \frac{e^{h(x, y_i)}}{\sum_{j=1}^ne^{h(x, y_i)}}<br>$$</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution {
+public:
+    int search(vector&lt;int&gt;&amp; nums, int target) {
+        
+        int left = 0;
+        int right = nums.size();
+        
+        while (left &lt; right)  // 1.
+        {
+            // 防止溢出
+            int middle = left + ((right - left) / 2);
+            
+            if (nums[middle] &lt; target)  // 2.
+            {
+                left = middle + 1;
+            }
+            else if (nums[middle] &gt; target) // 3.
+            {
+                right = middle;
+            }
+            else  // left == right
+            {
+                return middle;
+            }
+        }
+        
+        // 4.
+        return -1;
+    }
+    
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>思路二：定义target在一个左闭右闭的区间<code>[left, right]</code></p>
 <blockquote>
-<p><code>softmax</code>函数的分母是对输出层所有单元（j = 1, ···, n）的激活值进行求和，起到了归一化的作用，输出层中每个单元取值都是介于0和1之间的概率值，选择其中概率值最大的类别作为最终分类结果输出。</p>
+<ol>
+<li><p><code>left == right</code>在区间<code>[left, right)</code>内有意义，故循环条件为<code>&lt;=</code>；</p>
+</li>
+<li><p><code>若nums[middle] &lt; target，则更新左区间，由于定义的区间为左闭右闭，所以right= middle - 1</code>；</p>
+</li>
+<li><p><code>若nums[middle] &gt; target，则更新右区间，由于定义的区间为左闭右闭，所以 left = middle + 1</code>;</p>
+</li>
+<li><p><code>若在整个区间中未找到target，则返回-1</code>;</p>
+</li>
+</ol>
 </blockquote>
-<h2 id="六、神经网络的训练方法"><a href="#六、神经网络的训练方法" class="headerlink" title="六、神经网络的训练方法"></a>六、神经网络的训练方法</h2><p>卷积神经网络的参数包括卷积层的卷积核大小、全连接层的连接权重和偏置值。和多层神经网络一样，卷积神经网络中的参数训练也是使用误差反向传播算法。</p>
-<h2 id="未完待续…-…"><a href="#未完待续…-…" class="headerlink" title="未完待续… …"></a>未完待续… …</h2>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution {
+public:
+    int search(vector&lt;int&gt;&amp; nums, int target) {
+        
+        int left = 0;
+        int right = nums.size() - 1;  //[left, right]，所以要-1
+        
+        while (left &lt;= right)  // 1.
+        {
+            
+            // 防止溢出
+            int middle = left + ((right - left) &gt;&gt; 1);
+            
+            if (nums[middle] &lt; target)  // 2.
+            {
+                left = middle + 1;
+            }
+            else if (nums[middle] &gt; target)  // 3.
+            {
+                right = middle - 1;
+            }
+            else  // left == right
+            {
+                return middle; 
+            }
+        }
+        
+        return -1;  // 4.
+    }
+    
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="27-移除元素"><a href="#27-移除元素" class="headerlink" title="27. 移除元素"></a>27. 移除元素</h3><blockquote>
+<p>题目中描述<code>原地</code>移除元素，需要注意的是，数组中的元素无法真正移除，因为数组中的元素在内存地址上是连续的，不能单独删除数组中的某个元素，所以只能靠后面的元素覆盖前面的元素来实现元素的移除。</p>
+</blockquote>
+<p>思路：双指针法：通过一个快指针和一个慢指针在一个for循环内完成两个for循环的工作。</p>
+<blockquote>
+<ol>
+<li>定义两个指针<code>slowIdx, fastIdx</code>分别对数组进行遍历；</li>
+<li><code>fastIdx</code>在for循环中<code>一直向前移动</code>，如果<code>fastIdx指向的数组元素与目标val相等，slowIdx保持当前位置不变，fastIdx继续向后移动，直到遍历完整个数组</code>，注意<code>将fastIdx指向的最后一个元素更新到slowIdx中时，slowIdx要继续向前移动一个位置，而slowIdx最终指向的数组的位置（大小）即为更新后的新数组的元素个数</code>；</li>
+<li><code>fastIdx</code>在for循环中<code>一直向前移动</code>，只有在<code>满足fastIdx指向的数组元素与目标val不相等的条件下，slowIdx才更新数组的值并向前移动</code>；</li>
+</ol>
+</blockquote>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Solution {
+public:
+    int removeElement(vector&lt;int&gt;&amp; nums, int val) {
+
+        int slowIdx = 0;
+        
+        // fastIdx一直向后移动
+        for (inr fastIdx = 0; fastIdx &lt; nums.size(); fastIdx++)
+        {
+            if (val != nums[fastIdx])
+            {
+                // slowIdx只有在fastIdx满足条件的情况下才进行更新和移动
+                nums[slowIdx++] = nums[fastIdx];
+            }
+        }
+        
+        // slowIdx即为新数组中包含的元素个数
+        return slowIdx;
+
+    }
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<blockquote>
+<p>声明：此博客只作为学习记录，不做他用！！！参考链接：<a target="_blank" rel="noopener" href="https://programmercarl.com/">https://programmercarl.com/</a></p>
+</blockquote>
+
                 
             </div>
             <hr/>
@@ -378,7 +471,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://caizongxian.github.io/2022/09/12/juan-ji-shen-jing-wang-luo/">https://caizongxian.github.io/2022/09/12/juan-ji-shen-jing-wang-luo/</a>
+                    <a href="https://caizongxian.github.io/2022/09/21/dai-ma-sui-xiang-lu-xun-lian-ying-01/">https://caizongxian.github.io/2022/09/21/dai-ma-sui-xiang-lu-xun-lian-ying-01/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -416,8 +509,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
-                                    <span class="chip bg-color">神经网络</span>
+                                <a href="/tags/leetcode/">
+                                    <span class="chip bg-color">leetcode</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                         </div>
@@ -465,13 +562,13 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2022/09/12/juan-ji-shen-jing-wang-luo/">
+                <a href="/2022/09/21/dai-ma-sui-xiang-lu-xun-lian-ying-01/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="卷积神经网络">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="代码随想录训练营01">
                         
-                        <span class="card-title">卷积神经网络</span>
+                        <span class="card-title">代码随想录训练营01</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -482,14 +579,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    深度学习
+                            <a href="/categories/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/" class="post-category">
+                                    代码随想录
                                 </a>
                             
                             
@@ -500,8 +597,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
-                        <span class="chip bg-color">神经网络</span>
+                    <a href="/tags/leetcode/">
+                        <span class="chip bg-color">leetcode</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -515,13 +616,13 @@
                 本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2022/09/12/juan-ji-shen-jing-wang-luo/">
+                <a href="/2022/09/21/dai-ma-sui-xiang-lu-xun-lian-ying-01/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="卷积神经网络">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="代码随想录训练营01">
                         
-                        <span class="card-title">卷积神经网络</span>
+                        <span class="card-title">代码随想录训练营01</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -532,14 +633,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    深度学习
+                            <a href="/categories/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/" class="post-category">
+                                    代码随想录
                                 </a>
                             
                             
@@ -550,8 +651,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
-                        <span class="chip bg-color">神经网络</span>
+                    <a href="/tags/leetcode/">
+                        <span class="chip bg-color">leetcode</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -712,13 +817,6 @@
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
-    });
-</script>
 
 
 
